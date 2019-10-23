@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>AKARI YAMAGUCHI</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada"
+      rel="stylesheet"
+    />
+
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"
+    ></script>
+
+    <!-- スムーズスクロール部分の記述 -->
+    <script>
+      $(function() {
+        // #で始まるアンカーをクリックした場合に処理
+        $("a[href^=#]").click(function() {
+          // スクロールの速度
+          var speed = 400; // ミリ秒
+          // アンカーの値取得
+          var href = $(this).attr("href");
+          // 移動先を取得
+          var target = $(href == "#" || href == "" ? "html" : href);
+          // 移動先を数値で取得
+          var position = target.offset().top;
+          // スムーススクロール
+          $("body,html").animate({ scrollTop: position }, speed, "swing");
+          return false;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="top-wrap">
+      <div class="top-wrap__inner">
+        <h1>AKARI YAMAGUCHI</h1>
+      </div>
+    </div>
+    <!-- top begin -->
+    <div class="top">
+      <div id="nav-toggle">
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="gloval-nav">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#aboutlink">About</a></li>
+            <li><a href="#kimochilink">Kimochi</a></li>
+            <li><a href="#pflink">Portfolio</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /#gloval-nav -->
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      (function($) {
+        $(function() {
+          $("#nav-toggle").on("click", function() {
+            $("body").toggleClass("open");
+          });
+        });
+      })(jQuery);
+      $("#manu a[href]").on("click", function(event) {
+        $(".navToggle").trigger("click");
+      });
+    </script>
+    <!-- top end -->
+
+    <!-- about begin -->
+    <div class="about" id="aboutlink">
+      <div class="about__inner">
+        <div class="about__message">
+          <h2>
+            Roma was not<br />
+            <span class="mgl">built in a day.</span>
+          </h2>
+        </div>
+        <div class="about__wrap">
+          <div class="about__left">
+            <img src="img/concept.jpg" class="about__left_img" />
+            <div class="about__left_border"></div>
+            <div class="about__left_txt">smile!</div>
+          </div>
+          <div class="about__right">
+            <div class="about__right_title">
+              <p>About</p>
+            </div>
+            <div class="about__right_img">
+              <img src="img/profile.png" alt="プロフィール画像" />
+            </div>
+            <div class="about__right_text01">
+              <h3>AKARI YAMAGUCHI/ アカリ　ヤマグチ</h3>
+              <p>
+                1995年生まれ。
+                関西の大学を卒業後、新卒で人材メガベンチャー企業に入社。
+                テレアポや飛び込みで泥臭い経験を積み、社会人として基本を徹底的に学ぶ。
+                新卒で営業トップを取り、退職。
+              </p>
+            </div>
+            <div class="about__right_text02">
+              <p>
+                「場所と時間に縛られずに働きたい」と思い、
+                2019年（令和元年）７月末からプログラミングを未経験から学習開始。
+                ７ヶ月でHTML/CSS, JavaScript, JQuery, Rubyの言語を学習。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- about end -->
+
+    <!-- kimochi begin -->
+    <div class="kimochi" id="kimochilink">
+      <div class="kimochi__inner">
+        <div class="kimochi__title">
+          <p>Kimochi</p>
+        </div>
+
+        <div class="kimochi__subtitle">
+          <p>
+            今まであった仕事がAIに代わる。
+            <br />そんな代わりゆく時代に変わらないものはなんですか？
+          </p>
+        </div>
+        <div class="kimochi__txt">
+          <p>
+            AIや誰にも代え難いのははあなたの「気持ち・思い」だと私は思います。そんな時代にインターネットを通じてあなたの大切な思いを発信。そして、人と人が出会う。気持ちと気持ちが出会う。そんな素敵な出会いをサポートしたいです。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- kimochi end -->
+
+    <!-- skill begin -->
+    <div class="skills" id="skillslink">
+      <div class="skills__inner">
+        <div class="skills__title">
+          <p>skills</p>
+        </div>
+        <div class="wrapper">
+          <div class="bar">
+            <div class="bar-info html" data-total="95">
+              HTML
+              <span class="percent">95</span>
+            </div>
+          </div>
+
+          <div class="bar">
+            <div class="bar-info css" data-total="95">
+              CSS(SCSS)
+              <span class="percent">95</span>
+            </div>
+          </div>
+
+          <div class="bar">
+            <div class="bar-info js" data-total="80">
+              Ruby
+              <span class="percent">80</span>
+            </div>
+          </div>
+
+          <div class="bar">
+            <div class="bar-info ps" data-total="100">
+              Passion
+              <span class="percent">120</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+
+    <!-- skill end -->
+
+    <!-- pf begin -->
+    <div class="pf" id="pflink">
+      <div class="pf__inner">
+        <div class="pf__title">
+          <p>portfolio</p>
+        </div>
+
+        <div class="cta filter">
+          <a class="all active" data-filter="all" href="#" role="button"
+            >Show All</a
+          >
+          <a class="html" data-filter="html" href="#" role="button"
+            >HTML＆CSS</a
+          >
+          <a class="ruby" data-filter="ruby" href="#" role="button"
+            >Ruby on rails</a
+          >
+        </div>
+
+        <div class="boxes">
+          <a class="html" data-category="html" href="#">
+            <div class="imgbox">
+              <img class="imgbox__img" src="img/pf__img01.png" />
+              <div class="mask">
+                <div class="caption">模写サイト<br />air shift</div>
+              </div>
+            </div>
+          </a>
+
+          <a class="html" data-category="html" href="#">
+            <div class="imgbox">
+              <img class="imgbox__img" src="img/pf__img01.png" />
+              <div class="mask">
+                <div class="caption">模写サイト<br />air shift</div>
+              </div>
+            </div>
+          </a>
+
+          <a class="ruby" data-category="ruby" href="#">
+            <div class="imgbox">
+              <img class="imgbox__img" src="img/pf__img02.png" />
+              <div class="mask">
+                <div class="caption">模写サイト<br />air shift</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- pf end -->
+
+    <!-- contact begin -->
+    <div class="contact" id="contctlink">
+      <p class="contact__title">Contact form</p>
+      <div class="contact__form">
+        <p>メールアドレス（必須）</p>
+        <input />
+        <p>お問い合わせ内容（必須）</p>
+        <textarea></textarea>
+        <p>※必須項目は必ずご入力ください</p>
+        <input class="contact__form_submit" type="submit" vlue="送信" />
+      </div>
+    </div>
+    <!-- contact end -->
+    <!-- footer begin -->
+    <div class="footer">
+      <div class="footer__logo">
+        <p>AKARI YAMAGUCH</p>
+      </div>
+      <div class="footer__content">
+        <p>&copy; 2019 AKARI YAMAGUCH</p>
+        <p>from JPN</p>
+      </div>
+      <div class="footer__icon">
+        <a
+          href="https://twitter.com/akaruimiraixox"
+          class="footer__icon_twitter"
+          target="_blank"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a
+          href="https://github.com/AkariYamaguchi"
+          class="footer__icon_github"
+          target="_blank"
+        >
+          <i class="fab fa-github"> </i>
+        </a>
+        <a
+          href="https://www.instagram.com/redlip_oxo/"
+          class="footer__icon_instagram"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#contactform" class="footer__icon_mail">
+          <i class="far fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+    <!-- footer end -->
+    <!-- pf js -->
+    <script>
+      var $filters = $(".filter [data-filter]"),
+        $boxes = $(".boxes [data-category]");
+
+      $filters.on("click", function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        $filters.removeClass("active");
+        $this.addClass("active");
+
+        var $filterColor = $this.attr("data-filter");
+
+        if ($filterColor == "all") {
+          $boxes
+            .removeClass("is-animated")
+            .fadeOut()
+            .promise()
+            .done(function() {
+              $boxes.addClass("is-animated").fadeIn();
+            });
+        } else {
+          $boxes
+            .removeClass("is-animated")
+            .fadeOut()
+            .promise()
+            .done(function() {
+              $boxes
+                .filter('[data-category = "' + $filterColor + '"]')
+                .addClass("is-animated")
+                .fadeIn();
+            });
+        }
+      });
+      // 絞り込みボタンがクリック;
+    </script>
+  </body>
+</html>

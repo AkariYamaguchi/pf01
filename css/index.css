@@ -292,33 +292,80 @@
   padding: 0px 120px;
 }
 
-.kimochi {
+.k {
   padding: 20px;
 }
 
-.kimochi__inner {
-  width: 1100px;
-  margin: auto;
+.k__inner {
+  display: flex;
+}
+
+.k__inner .k__left {
+  padding: 100px 20px 180px 20px;
   text-align: center;
+  width: 50%;
+  position: relative;
 }
 
-.kimochi__inner .kimochi__title {
-  font-size: 25px;
-  letter-spacing: 5px;
-  display: inline-block;
-  padding: 60px;
-}
-
-.kimochi__inner .kimochi__subtitle {
+.k__inner .k__left .k__subtitle {
   font-size: 15px;
 }
 
-.kimochi__inner .kimochi__txt {
-  width: 40%;
-  margin: auto;
-  text-align: left;
+.k__inner .k__left .k__subtitle .frame-box {
+  padding: 30px;
+  position: relative;
+}
+
+.k__inner .k__left .k__subtitle .frame-box::before, .k__inner .k__left .k__subtitle .frame-box::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+
+.k__inner .k__left .k__subtitle .frame-box::before {
+  border-left: solid 2px #000000;
+  border-top: solid 2px #000000;
+  top: 0;
+  left: 0;
+}
+
+.k__inner .k__left .k__subtitle .frame-box::after {
+  border-right: solid 2px #000000;
+  border-bottom: solid 2px #000000;
+  bottom: 0;
+  right: 0;
+}
+
+.k__inner .k__left .k__txt {
+  margin-top: 80px;
   font-size: 13px;
-  padding: 20px 20px;
+}
+
+.k__inner .k__right {
+  width: 50%;
+  text-align: center;
+  padding: 140px 40px;
+  position: relative;
+}
+
+.k__inner .k__right img {
+  width: 400px;
+}
+
+.k__inner .k__right .k__title {
+  font-size: 80px;
+  color: white;
+  opacity: 0.7;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
 }
 
 .skills {
@@ -389,16 +436,14 @@
   background: linear-gradient(#9f68d0, #bb68d0), #9f68d0;
 }
 
-.pf {
-  padding: 20px;
-}
-
 .pf__inner {
-  width: 1100px;
-  margin: auto;
+  border: solid 2px black;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .pf__inner .pf__title {
+  border: solid 2px black;
   font-size: 25px;
   letter-spacing: 5px;
   display: inline-block;

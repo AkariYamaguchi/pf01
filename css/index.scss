@@ -1,21 +1,35 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 //関数（色・フォント）
 $main-color: #3a3a3a;
 $sub-color: #ffffff;
 $font-color: #2b2b2b;
+$color01: #84687e;
 $bar-style: solid;
 $bar-size: 2px;
 $bar-color: #000000;
+$background: #fffaf0;
 
 //mixin(title)
 @mixin title {
-  font-size: 25px;
+  font-size: 60px;
   letter-spacing: 5px;
   display: inline-block;
   padding: 60px;
+  font-family: "Abril Fatface", cursive;
+}
+
+@function get_vw($size, $viewport: 320) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size: 10) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
 }
 
 // //スクロールした時にふわっと
@@ -34,25 +48,32 @@ $bar-color: #000000;
   background-image: url(../img/top_bg/top_bg.jpg);
   height: 590px;
   position: relative;
+  @media (max-width: 670px) {
+    text-align: center;
+    background-image: url(../img/top_bg/top_bg.jpg);
+    background-size: cover;
+    height: 300px;
+  }
   &__inner {
     width: auto;
     margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
-    // & img {
-    //   height: 590px;
-    //   width: 1290px;
-    // }
   }
   h1 {
-    color: #c71585;
+    color: $color01;
     text-align: center;
     padding-top: 60px;
     letter-spacing: 8px;
     font-family: "Broadway", "Avenir", "sans-serif";
     font-size: 70px;
     font-weight: normal;
+    @media (max-width: 670px) {
+      text-align: center;
+      @include fz_vw(16);
+      color: yellow;
+    }
   }
 }
 #nav-toggle {
@@ -204,40 +225,71 @@ $bar-color: #000000;
 //top-end
 //about begin
 .about {
-  padding: 20px 0px;
+  padding: 0px 0px;
   &__inner {
     position: relative;
     .about__message {
       padding: 20px;
-      letter-spacing: 5px;
-      color: $font-color;
+      letter-spacing: 0.7em;
+      @media (max-width: 670px) {
+        padding: 0;
+      }
       & h2 {
-        color: pink;
-        font-size: 40px;
+        font-family: "Abril Fatface", cursive;
+        color: $color01;
+        font-size: 50px;
         position: absolute;
         top: 28px;
-        left: 300px;
+        left: 100px;
         z-index: 6;
+        @media (max-width: 670px) {
+          font-size: 6vw;
+          position: absolute;
+          top: 1%;
+          left: 8%;
+        }
         & .mgl {
           margin-left: 80px;
+          @media (max-width: 670px) {
+            margin-left: 15%;
+          }
         }
       }
     }
     .about__wrap {
       display: flex;
+      width: 100%;
+      height: auto;
+      @media (max-width: 670px) {
+        display: block;
+      }
       .about__left {
         width: 35%;
+        max-width: 100%;
+        height: 600px;
         background-color: #3a3a3a;
         position: relative;
         z-index: 5;
+        @media (max-width: 670px) {
+          width: 100%;
+          height: 400px;
+        }
         & img {
-          height: 380px;
+          max-width: 100%;
+          height: auto;
           position: absolute;
           top: 190px;
           left: 50px;
+          @media (max-width: 670px) {
+            // text-align: center;
+            width: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+          }
         }
         &_border {
-          height: 250px;
+          height: 290px;
           position: absolute;
           top: 380px;
           left: 25px;
@@ -260,31 +312,50 @@ $bar-color: #000000;
         text-align: center;
         padding: 20px;
         margin: 30px 0px;
-        // border: solid 2px black;
-
+        @media (max-width: 670px) {
+          text-align: center;
+          // margin: 0;
+          // padding: 0;
+          width: 100%;
+        }
         &_title {
           @include title();
           // @include scroll();
         }
         & img {
+          max-width: 100%;
           height: 130px;
           text-align: center;
+          @media (max-width: 670px) {
+            text-align: center;
+          }
         }
         &_text01 {
           margin: 20px 30px;
           padding: 30px 120px 0px 120px;
-
+          @media (max-width: 670px) {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+          }
           & h3 {
             font-weight: normal;
             letter-spacing: 3px;
             text-align: center;
             font-size: 18px;
+            @media (max-width: 670px) {
+              @include fz_vw(9);
+            }
           }
           & p {
             text-align: left;
             font-size: 13px;
             display: block;
             margin: 13px 0px;
+            font-size: 13px;
+            @media (max-width: 670px) {
+              @include fz_vw(3);
+            }
           }
         }
         &_text02 {
@@ -292,6 +363,15 @@ $bar-color: #000000;
           font-size: 13px;
           margin: 0px 30px;
           padding: 0px 120px;
+          @media (max-width: 670px) {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+            @media (max-width: 670px) {
+              @include fz_vw(3);
+            }
+          }
         }
       }
     }
@@ -301,24 +381,32 @@ $bar-color: #000000;
 
 // kimochi begin
 .k {
-  padding: 20px;
   &__inner {
-    // border: solid 2px black;
-    // width: 1100px;
-    // margin: auto;
-    // background-color: $main-color;
-
     display: flex;
+    @media (max-width: 670px) {
+      flex-direction: column-reverse;
+    }
     .k__left {
       padding: 100px 20px 180px 20px;
       text-align: center;
       width: 50%;
       position: relative;
+
+      @media (max-width: 670px) {
+        width: 100%;
+        padding: 50px 10px 70px 10px;
+      }
       .k__subtitle {
-        font-size: 15px;
+        font-size: 20px;
+
+        @media (max-width: 670px) {
+          @include fz_vw(10);
+        }
+
         .frame-box {
           padding: 30px;
           position: relative;
+
           &::before,
           &::after {
             content: "";
@@ -343,18 +431,31 @@ $bar-color: #000000;
       .k__txt {
         margin-top: 80px;
         font-size: 13px;
+        & span {
+          background: linear-gradient(transparent 50%, yellow 50%);
+        }
+        @media (max-width: 670px) {
+          @include fz_vw(6);
+          // margin: 30px;
+        }
       }
     }
     .k__right {
+      background-color: $color01;
       width: 50%;
       text-align: center;
       padding: 140px 40px;
       position: relative;
+      @media (max-width: 670px) {
+        width: 100%;
+      }
       & img {
+        max-width: 100%;
         width: 400px;
       }
       .k__title {
-        font-size: 80px;
+        font-family: "Abril Fatface", cursive;
+        font-size: 90px;
         color: white;
         opacity: 0.7;
         text-align: center;
@@ -375,11 +476,16 @@ $bar-color: #000000;
 //skills begin
 .skills {
   padding: 20px;
+  background-color: $background;
   &__inner {
-    width: 1100px;
+    width: 100%;
     margin: auto;
     .skills__title {
-      @include title();
+      font-family: "Abril Fatface", cursive;
+      text-align: center;
+      font-size: 60px;
+      letter-spacing: 5px;
+      padding: 60px;
     }
 
     // @import url(https://fonts.googleapis.com/css?family=Open+Sans:400, 700);
@@ -388,12 +494,6 @@ $bar-color: #000000;
     $yellow: #fec951;
     $blue: #47b8e0;
     $purp: #9f68d0;
-
-    body {
-      background: #1f1e24;
-      height: 200px;
-      font-family: "Open Sans", sans-serif;
-    }
 
     .wrapper {
       margin: 0 auto;
@@ -415,22 +515,26 @@ $bar-color: #000000;
         color: white;
         width: 10%;
         position: relative;
-        height: 24px;
+        height: 45px;
         transition: width 3.3s ease-in-out;
         .percent {
           float: right;
         }
         &.html {
-          background: linear-gradient($red, #fc688e), $red;
+          // background: linear-gradient($red, #fc688e), $red;
+          background: $main-color;
         }
         &.css {
-          background: linear-gradient($yellow, #fcad44), $yellow;
+          // background: linear-gradient($yellow, #fcad44), $yellow;
+          background: $main-color;
         }
         &.js {
-          background: linear-gradient($blue, #28befa), $blue;
+          // background: linear-gradient($blue, #28befa), $blue;
+          background: $main-color;
         }
         &.ps {
-          background: linear-gradient($purp, #bb68d0), $purp;
+          // background: linear-gradient($purp, #bb68d0), $purp;
+          background: $main-color;
         }
       }
     }
@@ -441,26 +545,35 @@ $bar-color: #000000;
 //pf begin
 .pf {
   &__inner {
-    border: solid 2px black;
-    width: 1200px;
-    margin: 0 auto;
+    width: 100vw;
+    // background-color: $background;
+    @media (max-width: 670px) {
+      // width: 100%;
+    }
     .pf__title {
-      border: solid 2px black;
-      @include title();
-      // & p {
-      //   border: solid 2px black;
-
-      // }
+      font-family: "Abril Fatface", cursive;
+      text-align: center;
+      font-size: 60px;
+      letter-spacing: 5px;
+      padding: 60px;
+    }
+    .cta {
+      text-align: center;
     }
     .filter a {
       position: relative;
       color: $font-color;
-      font-size: 18px;
+      font-size: 25px;
       letter-spacing: 2px;
-      margin-right: 13px;
+      margin-right: 60px;
       text-decoration: none;
+      font-family: "Playfair Display", serif;
+      @media (max-width: 670px) {
+        @include fz_vw(10);
+        margin-right: 30px;
+        text-align: center;
+      }
       &.active:before {
-        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -472,21 +585,22 @@ $bar-color: #000000;
         border-color: #333 transparent transparent transparent;
       }
     }
+
     .boxes {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
       margin: 50px 0px;
+      @media (max-width: 670px) {
+        display: block;
+      }
       & a {
         width: 33.33%;
-        // border: 1px solid #333;
         outline: none;
         text-decoration: none;
-        // margin: 0 1% 20px 1%;
-        // line-height: 60px;
       }
     }
-    @keyframes zoom-in {
+    @keyframes zoom-in-up {
       0% {
         transform: scale(0.1);
       }
@@ -505,17 +619,16 @@ $bar-color: #000000;
     }
 
     .is-animated {
-      animation: 0.6s zoom-in;
-      // animation: .6s rotate-right;
+      animation: 0.6s zoom-in-up;
     }
     .imgbox {
-      width: 350px;
-      height: 188px;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
-      // margin: 10px 8px 10px 16px;
       position: relative;
       object-fit: cover;
       .imgbox__img {
+        max-width: 100%;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -557,32 +670,38 @@ $bar-color: #000000;
 
 //contact begin
 .contact {
-  padding: 10px;
-  width: 1100px;
+  background-color: $background;
+  padding: 30px;
+  width: 100%;
   margin: auto;
   text-align: center;
   &__title {
+    font-family: "Abril Fatface", cursive;
     @include title();
   }
   &__form {
-    background-image: url(../img/contactbg.jpg);
-    background-size: cover;
-    border: solid 1px $main-color;
-    border-radius: 5px;
-    padding: 30px;
+    @media (max-width: 670px) {
+      background-image: none;
+    }
+    padding: 10px;
     & p {
       font-size: 13px;
       color: $font-color;
     }
     & input,
     textarea {
-      width: 400px;
+      width: 30%;
       margin-top: 10px;
       margin-bottom: 30px;
       padding: 20px;
       font-size: 18px;
       border: 1px solid #dee7ec;
       border-radius: 5px;
+      @media (max-width: 670px) {
+        @include fz_vw(10);
+        width: 80%;
+        padding: 10px;
+      }
     }
     &_submit {
       background-color: #e597b2;
@@ -596,10 +715,10 @@ $bar-color: #000000;
 //footer begin
 .footer {
   padding: 20px;
-  width: 1200px;
+  width: 100%;
   margin: auto;
   text-align: center;
-  // border: solid 2px black;
+  background-color: $color01;
   &__logo {
     font-size: 15px;
     letter-spacing: 4px;

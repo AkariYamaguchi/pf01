@@ -21,15 +21,15 @@
 }
 
 .top-wrap__inner {
+  padding: 190px;
   width: auto;
   margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 590px;
 }
 
 .top-wrap h1 {
-  color: #84687e;
+  color: #e49ab0;
   text-align: center;
   padding-top: 60px;
   letter-spacing: 8px;
@@ -43,7 +43,6 @@
     text-align: center;
     font-size: 16px;
     font-size: 5vw;
-    color: yellow;
   }
 }
 
@@ -222,7 +221,7 @@
 
 .about__inner .about__message h2 {
   font-family: "Abril Fatface", cursive;
-  color: #84687e;
+  color: #e49ab0;
   font-size: 50px;
   position: absolute;
   top: 28px;
@@ -317,7 +316,6 @@
   background-color: #ffffff;
   width: 65%;
   text-align: center;
-  padding: 20px;
   margin: 30px 0px;
 }
 
@@ -439,6 +437,7 @@
 
 .k__inner .k__left .k__subtitle {
   font-size: 20px;
+  color: #433e3f;
 }
 
 @media (max-width: 670px) {
@@ -451,6 +450,7 @@
 .k__inner .k__left .k__subtitle .frame-box {
   padding: 30px;
   position: relative;
+  color: #433e3f;
 }
 
 .k__inner .k__left .k__subtitle .frame-box::before, .k__inner .k__left .k__subtitle .frame-box::after {
@@ -477,10 +477,11 @@
 .k__inner .k__left .k__txt {
   margin-top: 80px;
   font-size: 13px;
+  color: #433e3f;
 }
 
 .k__inner .k__left .k__txt span {
-  background: linear-gradient(transparent 50%, yellow 50%);
+  background: linear-gradient(transparent 50%, rgba(228, 154, 176, 0.6) 50%);
 }
 
 @media (max-width: 670px) {
@@ -491,7 +492,7 @@
 }
 
 .k__inner .k__right {
-  background-color: #84687e;
+  background-color: rgba(228, 154, 176, 0.6);
   width: 50%;
   text-align: center;
   padding: 140px 40px;
@@ -527,7 +528,6 @@
 
 .skills {
   padding: 20px;
-  background-color: #fffaf0;
 }
 
 .skills__inner {
@@ -562,7 +562,7 @@
   border-radius: 5px;
   padding: 0.75rem;
   background: #fd7473;
-  color: white;
+  color: #e49ab0;
   width: 10%;
   position: relative;
   height: 45px;
@@ -574,19 +574,19 @@
 }
 
 .skills__inner .bar .bar-info.html {
-  background: #3a3a3a;
+  background: #433e3f;
 }
 
 .skills__inner .bar .bar-info.css {
-  background: #3a3a3a;
+  background: #433e3f;
 }
 
 .skills__inner .bar .bar-info.js {
-  background: #3a3a3a;
+  background: #433e3f;
 }
 
 .skills__inner .bar .bar-info.ps {
-  background: #3a3a3a;
+  background: #433e3f;
 }
 
 .pf__inner {
@@ -605,18 +605,43 @@
   text-align: center;
 }
 
-.pf__inner .filter a {
+.pf__inner .line {
   position: relative;
-  color: #2b2b2b;
+  color: #433e3f;
   font-size: 25px;
   letter-spacing: 2px;
   margin-right: 60px;
   text-decoration: none;
   font-family: "Playfair Display", serif;
+  /* ホバー始まり */
+  display: inline;
+  position: relative;
+  overflow: hidden;
+  /* ホバー終わり */
+}
+
+.pf__inner .line:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: #e49ab0;
+  height: 4px;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.pf__inner .line:hover:after, .pf__inner .line:focus:after, .pf__inner .line:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
 }
 
 @media (max-width: 670px) {
-  .pf__inner .filter a {
+  .pf__inner .line {
     font-size: 10px;
     font-size: 3.125vw;
     margin-right: 30px;
@@ -624,7 +649,7 @@
   }
 }
 
-.pf__inner .filter a.active:before {
+.pf__inner .line.active:before {
   position: absolute;
   left: 0;
   top: 0;
@@ -721,7 +746,6 @@
 }
 
 .contact {
-  background-color: #fffaf0;
   padding: 30px;
   width: 100%;
   margin: auto;
@@ -749,7 +773,7 @@
 
 .contact__form p {
   font-size: 13px;
-  color: #2b2b2b;
+  color: #433e3f;
 }
 
 .contact__form input,
@@ -774,8 +798,8 @@
 }
 
 .contact__form_submit {
-  background-color: #e597b2;
-  color: #2b2b2b;
+  background-color: #e49ab0;
+  color: #433e3f;
   font-size: 11px;
 }
 
@@ -784,7 +808,8 @@
   width: 100%;
   margin: auto;
   text-align: center;
-  background-color: #84687e;
+  background-color: #433e3f;
+  color: white;
 }
 
 .footer__logo {
@@ -796,7 +821,7 @@
 
 .footer__content {
   font-size: 11px;
-  color: #2b2b2b;
+  color: white;
 }
 
 .footer__content p {
@@ -809,7 +834,7 @@
 }
 
 .footer__icon_twitter {
-  color: #333;
+  color: white;
   font-family: fontawesome;
   content: "\f09b";
   margin-right: 0.5em;
@@ -819,7 +844,7 @@
 }
 
 .footer__icon_github {
-  color: #333;
+  color: white;
   font-family: fontawesome;
   content: "\f09b";
   margin-right: 0.5em;
@@ -829,7 +854,7 @@
 }
 
 .footer__icon_instagram {
-  color: #333;
+  color: white;
   font-family: fontawesome;
   content: "\f09b";
   margin-right: 0.5em;
@@ -839,7 +864,7 @@
 }
 
 .footer__icon_mail {
-  color: #333;
+  color: white;
   font-family: fontawesome;
   content: "\f09b";
   margin-right: 0.5em;

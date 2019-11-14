@@ -6,8 +6,17 @@
 //関数（色・フォント）
 $main-color: #3a3a3a;
 $sub-color: #ffffff;
-$font-color: #2b2b2b;
-$color01: #84687e;
+// // $font-color: #2b2b2b;
+$font-color: #433e3f;
+// 紫
+// $color01: #9e768f;
+// ピンク
+$color01: #e49ab0;
+$color01sub: rgba(228, 154, 176, 0.6);
+// 水色
+$color02: #b0c4de;
+// $color02: #e49ab0;
+$color03: #efd2cd;
 $bar-style: solid;
 $bar-size: 2px;
 $bar-color: #000000;
@@ -32,17 +41,6 @@ $background: #fffaf0;
   font-size: get_vw($font_size);
 }
 
-// //スクロールした時にふわっと
-// @mixin scroll {
-//   opacity: 0.1;
-//   transform: translate(0, 50px);
-//   transition: all 500ms;
-//   & .effect-scroll {
-//     opacity: 1;
-//     transform: translate(0, 0);
-//   }
-// }
-
 //top-begin
 .top-wrap {
   background-image: url(../img/top_bg/top_bg.jpg);
@@ -55,11 +53,11 @@ $background: #fffaf0;
     height: 300px;
   }
   &__inner {
+    padding: 190px;
     width: auto;
     margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 590px;
   }
   h1 {
     color: $color01;
@@ -72,7 +70,6 @@ $background: #fffaf0;
     @media (max-width: 670px) {
       text-align: center;
       @include fz_vw(16);
-      color: yellow;
     }
   }
 }
@@ -310,17 +307,14 @@ $background: #fffaf0;
         background-color: $sub-color;
         width: 65%;
         text-align: center;
-        padding: 20px;
+
         margin: 30px 0px;
         @media (max-width: 670px) {
           text-align: center;
-          // margin: 0;
-          // padding: 0;
           width: 100%;
         }
         &_title {
           @include title();
-          // @include scroll();
         }
         & img {
           max-width: 100%;
@@ -398,7 +392,7 @@ $background: #fffaf0;
       }
       .k__subtitle {
         font-size: 20px;
-
+        color: $font-color;
         @media (max-width: 670px) {
           @include fz_vw(10);
         }
@@ -406,7 +400,7 @@ $background: #fffaf0;
         .frame-box {
           padding: 30px;
           position: relative;
-
+          color: $font-color;
           &::before,
           &::after {
             content: "";
@@ -431,8 +425,9 @@ $background: #fffaf0;
       .k__txt {
         margin-top: 80px;
         font-size: 13px;
+        color: $font-color;
         & span {
-          background: linear-gradient(transparent 50%, yellow 50%);
+          background: linear-gradient(transparent 50%, $color01sub 50%);
         }
         @media (max-width: 670px) {
           @include fz_vw(6);
@@ -441,7 +436,7 @@ $background: #fffaf0;
       }
     }
     .k__right {
-      background-color: $color01;
+      background-color: $color01sub;
       width: 50%;
       text-align: center;
       padding: 140px 40px;
@@ -476,7 +471,7 @@ $background: #fffaf0;
 //skills begin
 .skills {
   padding: 20px;
-  background-color: $background;
+  // background-color: $background;
   &__inner {
     width: 100%;
     margin: auto;
@@ -486,9 +481,8 @@ $background: #fffaf0;
       font-size: 60px;
       letter-spacing: 5px;
       padding: 60px;
+      // color: $font-color;
     }
-
-    // @import url(https://fonts.googleapis.com/css?family=Open+Sans:400, 700);
 
     $red: #fd7473;
     $yellow: #fec951;
@@ -512,7 +506,7 @@ $background: #fffaf0;
         border-radius: 5px;
         padding: 0.75rem;
         background: $red;
-        color: white;
+        color: $color01;
         width: 10%;
         position: relative;
         height: 45px;
@@ -521,20 +515,16 @@ $background: #fffaf0;
           float: right;
         }
         &.html {
-          // background: linear-gradient($red, #fc688e), $red;
-          background: $main-color;
+          background: $font-color;
         }
         &.css {
-          // background: linear-gradient($yellow, #fcad44), $yellow;
-          background: $main-color;
+          background: $font-color;
         }
         &.js {
-          // background: linear-gradient($blue, #28befa), $blue;
-          background: $main-color;
+          background: $font-color;
         }
         &.ps {
-          // background: linear-gradient($purp, #bb68d0), $purp;
-          background: $main-color;
+          background: $font-color;
         }
       }
     }
@@ -560,7 +550,7 @@ $background: #fffaf0;
     .cta {
       text-align: center;
     }
-    .filter a {
+    .line {
       position: relative;
       color: $font-color;
       font-size: 25px;
@@ -568,6 +558,32 @@ $background: #fffaf0;
       margin-right: 60px;
       text-decoration: none;
       font-family: "Playfair Display", serif;
+      /* ホバー始まり */
+      display: inline;
+      position: relative;
+      overflow: hidden;
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        width: 0;
+        bottom: -5px;
+
+        background: $color01;
+        height: 4px;
+        transition-property: width;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      &:hover:after,
+      &:focus:after,
+      &:active:after {
+        left: 0;
+        right: auto;
+        width: 100%;
+      }
+      /* ホバー終わり */
       @media (max-width: 670px) {
         @include fz_vw(10);
         margin-right: 30px;
@@ -670,7 +686,7 @@ $background: #fffaf0;
 
 //contact begin
 .contact {
-  background-color: $background;
+  // background-color: $background;
   padding: 30px;
   width: 100%;
   margin: auto;
@@ -704,7 +720,7 @@ $background: #fffaf0;
       }
     }
     &_submit {
-      background-color: #e597b2;
+      background-color: $color01;
       color: $font-color;
       font-size: 11px;
     }
@@ -718,7 +734,8 @@ $background: #fffaf0;
   width: 100%;
   margin: auto;
   text-align: center;
-  background-color: $color01;
+  background-color: $font-color;
+  color: white;
   &__logo {
     font-size: 15px;
     letter-spacing: 4px;
@@ -727,7 +744,7 @@ $background: #fffaf0;
   }
   &__content {
     font-size: 11px;
-    color: $font-color;
+    color: white;
     & p {
       display: block;
       padding: 5px;
@@ -735,7 +752,7 @@ $background: #fffaf0;
   }
   //icon　mixin
   @mixin icon {
-    color: #333;
+    color: white;
     font-family: fontawesome;
     content: "\f09b";
     margin-right: 0.5em;

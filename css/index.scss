@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
 //関数（色・フォント）
 $main-color: #3a3a3a;
 $sub-color: #ffffff;
@@ -43,8 +44,11 @@ $background: #fffaf0;
 
 //top-begin
 .top-wrap {
+  width: 100vw;
+  height: 750px;
   background-image: url(../img/top_bg/top_bg.jpg);
-  height: 590px;
+  // height: 790px;
+  background-size: cover;
   position: relative;
   @media (max-width: 670px) {
     text-align: center;
@@ -57,7 +61,8 @@ $background: #fffaf0;
     width: auto;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.4);
-    height: 590px;
+    height: 750px;
+    width: 100vw;
   }
   h1 {
     color: $color01;
@@ -471,7 +476,7 @@ $background: #fffaf0;
 //skills begin
 .skills {
   padding: 20px;
-  // background-color: $background;
+  background-color: #f5f5f5;
   &__inner {
     width: 100%;
     margin: auto;

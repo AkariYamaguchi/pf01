@@ -44,8 +44,9 @@
 @media (max-width: 670px) {
   .top-wrap h1 {
     text-align: center;
-    font-size: 16px;
-    font-size: 5vw;
+    font-size: 18px;
+    font-size: 5.625vw;
+    padding: 20px;
   }
 }
 
@@ -234,9 +235,10 @@
 
 @media (max-width: 670px) {
   .about__inner .about__message h2 {
-    font-size: 6vw;
+    width: 100%;
+    font-size: 5vw;
     position: absolute;
-    top: 1%;
+    top: 5%;
     left: 8%;
   }
 }
@@ -326,6 +328,7 @@
   .about__inner .about__wrap .about__right {
     text-align: center;
     width: 100%;
+    padding: 0 20px;
   }
 }
 
@@ -358,7 +361,7 @@
   .about__inner .about__wrap .about__right_text01 {
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 10px;
   }
 }
 
@@ -371,8 +374,8 @@
 
 @media (max-width: 670px) {
   .about__inner .about__wrap .about__right_text01 h3 {
-    font-size: 9px;
-    font-size: 2.8125vw;
+    font-size: 12px;
+    font-size: 3.75vw;
   }
 }
 
@@ -386,8 +389,9 @@
 
 @media (max-width: 670px) {
   .about__inner .about__wrap .about__right_text01 p {
-    font-size: 3px;
-    font-size: 0.9375vw;
+    font-size: 8px;
+    font-size: 2.5vw;
+    padding-top: 30px;
   }
 }
 
@@ -409,8 +413,8 @@
 
 @media (max-width: 670px) and (max-width: 670px) {
   .about__inner .about__wrap .about__right_text02 {
-    font-size: 3px;
-    font-size: 0.9375vw;
+    font-size: 8px;
+    font-size: 2.5vw;
   }
 }
 
@@ -489,8 +493,8 @@
 
 @media (max-width: 670px) {
   .k__inner .k__left .k__txt {
-    font-size: 6px;
-    font-size: 1.875vw;
+    font-size: 8px;
+    font-size: 2.5vw;
   }
 }
 
@@ -786,7 +790,7 @@
   margin-top: 10px;
   margin-bottom: 30px;
   padding: 20px;
-  font-size: 18px;
+  font-size: 13px;
   border: 1px solid #dee7ec;
   border-radius: 5px;
 }

@@ -74,7 +74,8 @@ $background: #fffaf0;
     font-weight: normal;
     @media (max-width: 670px) {
       text-align: center;
-      @include fz_vw(16);
+      @include fz_vw(18);
+      padding: 20px;
     }
   }
 }
@@ -245,9 +246,10 @@ $background: #fffaf0;
         left: 100px;
         z-index: 6;
         @media (max-width: 670px) {
-          font-size: 6vw;
+          width: 100%;
+          font-size: 5vw;
           position: absolute;
-          top: 1%;
+          top: 5%;
           left: 8%;
         }
         & .mgl {
@@ -317,6 +319,7 @@ $background: #fffaf0;
         @media (max-width: 670px) {
           text-align: center;
           width: 100%;
+          padding: 0 20px;
         }
         &_title {
           @include title();
@@ -335,7 +338,7 @@ $background: #fffaf0;
           @media (max-width: 670px) {
             text-align: center;
             margin: 0;
-            padding: 0;
+            padding: 10px;
           }
           & h3 {
             font-weight: normal;
@@ -343,7 +346,7 @@ $background: #fffaf0;
             text-align: center;
             font-size: 18px;
             @media (max-width: 670px) {
-              @include fz_vw(9);
+              @include fz_vw(12);
             }
           }
           & p {
@@ -353,7 +356,8 @@ $background: #fffaf0;
             margin: 13px 0px;
             font-size: 13px;
             @media (max-width: 670px) {
-              @include fz_vw(3);
+              @include fz_vw(8);
+              padding-top: 30px;
             }
           }
         }
@@ -368,7 +372,7 @@ $background: #fffaf0;
             padding: 0;
             font-size: 13px;
             @media (max-width: 670px) {
-              @include fz_vw(3);
+              @include fz_vw(8);
             }
           }
         }
@@ -435,7 +439,7 @@ $background: #fffaf0;
           background: linear-gradient(transparent 50%, $color01sub 50%);
         }
         @media (max-width: 670px) {
-          @include fz_vw(6);
+          @include fz_vw(8);
           // margin: 30px;
         }
       }
@@ -715,7 +719,7 @@ $background: #fffaf0;
       margin-top: 10px;
       margin-bottom: 30px;
       padding: 20px;
-      font-size: 18px;
+      font-size: 13px;
       border: 1px solid #dee7ec;
       border-radius: 5px;
       @media (max-width: 670px) {

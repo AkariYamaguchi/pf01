@@ -381,6 +381,99 @@ $background: #fffaf0;
   }
 }
 // about end
+//<!-- self(S)introduce(I) begin -->
+// .si {
+//   padding: 20px;
+//   &__inner {
+//     .si__title {
+//       font-family: "Abril Fatface", cursive;
+//       text-align: center;
+//       font-size: 40px;
+//       letter-spacing: 5px;
+//       padding: 60px;
+//     }
+//     .si__boxes {
+//       display: flex;
+//       flex-wrap: wrap;
+//       width: 100%;
+//       margin: 50px 0px;
+
+//       @media (max-width: 670px) {
+//         display: block;
+//       }
+//       & a {
+//         width: 33.33%;
+//         // height: 33.33%;
+//         outline: none;
+//         text-decoration: none;
+//       }
+//     }
+//     // @keyframes zoom-in-up {
+//   0% {
+//     transform: scale(0.1);
+//   }
+//   100% {
+//     transform: none;
+//   }
+// }
+
+// @keyframes rotate-right {
+//   0% {
+//     transform: translate(-100%) rotate(-100deg);
+//   }
+//   100% {
+//     transform: none;
+//   }
+// }
+
+// .is-animated {
+//   animation: 0.6s zoom-in-up;
+// }
+//     .imgboxes {
+//       width: 100%;
+//       height: 100%;
+//       overflow: hidden;
+//       position: relative;
+//       object-fit: cover;
+//       .imgboxes__img {
+//         max-width: 100%;
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//       /* 相対位置指定 */
+
+//       .caption {
+//         font-size: 130%;
+//         text-align: center;
+//         padding-top: 80px;
+//         color: #fff;
+//       }
+
+//       .mask {
+//         width: 100%;
+//         height: 100%;
+//         position: absolute;
+//         /* 絶対位置指定 */
+//         top: 0;
+//         left: 0;
+//         opacity: 0;
+//         /* マスクを表示しない */
+//         background-color: rgba(0, 0, 0, 0.7);
+
+//         /* マスクは半透明 */
+//         -webkit-transition: all 0.2s ease;
+//         transition: all 0.2s ease;
+//       }
+//       &:hover .mask {
+//         opacity: 1;
+
+//         /* マスクを表示する */
+//       }
+//     }
+//   }
+// }
+// // <!-- self(S)introduce(I) end -->
 
 // kimochi begin
 .k {

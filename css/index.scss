@@ -392,12 +392,18 @@ $background: #fffaf0;
     width: 100%;
     margin: auto;
     padding: 120px;
+    @media (max-width: 670px) {
+      padding: 50px;
+    }
 
     .si__title {
       text-align: center;
       font-size: 28px;
       letter-spacing: 4px;
       padding: 20px;
+      @media (max-width: 670px) {
+        @include fz_vw(12);
+      }
     }
     .si__wrap {
       .card-wrapper {

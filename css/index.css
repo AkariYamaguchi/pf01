@@ -425,11 +425,24 @@
   /* DEMO */
 }
 
+@media (max-width: 670px) {
+  .si__inner {
+    padding: 50px;
+  }
+}
+
 .si__inner .si__title {
   text-align: center;
   font-size: 28px;
   letter-spacing: 4px;
   padding: 20px;
+}
+
+@media (max-width: 670px) {
+  .si__inner .si__title {
+    font-size: 12px;
+    font-size: 3.75vw;
+  }
 }
 
 .si__inner .si__wrap .card-wrapper {
